@@ -1,188 +1,337 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chefony - Delicious Meals Delivered</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Chefony | חוויות שף פרטיות בהתאמה אישית</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Assistant', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1c1917 0%, #0c0a09 100%); }
+        .step-card {
+            background: #0c0a09;
+            border: 1px solid #292524;
+            padding: 24px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .step-card:hover {
+            border-color: rgba(245, 158, 11, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background-color: #f59e0b;
+            color: #0c0a09;
+            font-weight: 900;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 20px;
+            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.2);
+        }
+        .step-icon {
+            font-size: 48px;
+            color: #f59e0b;
+            margin-bottom: 24px;
+            filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5));
+        }
+    </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <h1>Chefony</h1>
-                <p data-en="Gourmet Meals at Your Door" data-he="ארוחות גורמט אצלך בדלת">ארוחות גורמט אצלך בדלת</p>
+<body class="bg-stone-950 text-stone-100 antialiased">
+
+    <nav class="bg-stone-900/90 backdrop-blur-md sticky top-0 z-50 border-b border-stone-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-3xl font-black tracking-tighter text-amber-500">Chefony</span>
+            <div class="flex gap-4 md:gap-8 items-center font-semibold text-stone-300">
+                <a href="#services" class="hidden md:inline hover:text-amber-500 transition" data-en="Our Services" data-he="השירותים שלנו">השירותים שלנו</a>
+                <a href="#how-it-works" class="hidden md:inline hover:text-amber-500 transition" data-en="How It Works" data-he="איך זה עובד">איך זה עובד</a>
+                <a href="#contact" class="hidden md:inline hover:text-amber-500 transition" data-en="Get a Quote" data-he="הצעת מחיר">הצעת מחיר</a>
+                
+                <button onclick="toggleLanguage()" class="bg-stone-800 hover:bg-stone-700 text-amber-400 text-xs font-bold px-3 py-1.5 rounded-lg border border-stone-700 transition cursor-pointer">
+                    EN / עבר
+                </button>
+                
+                <a href="tel:0526733636" class="hidden md:block bg-amber-500 hover:bg-amber-600 text-stone-950 px-6 py-2 rounded-full transition shadow-md font-bold" data-en="📞 Call Chef" data-he="📞 חיוג לשף">📞 חיוג לשף</a>
             </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active" data-en="Home" data-he="בית">בית</a>
-                <a href="meals.html" class="nav-link" data-en="Browse Meals" data-he="עיין בארוחות">עיין בארוחות</a>
-                <a href="#how-it-works" class="nav-link" data-en="How It Works" data-he="איך זה עובד">איך זה עובד</a>
-                <button class="lang-toggle" onclick="toggleLanguage()">EN / עבר</button>
-            </div>
+            <a href="tel:0526733636" class="md:hidden bg-amber-500 text-stone-950 p-2.5 rounded-full shadow-md font-bold">📞</a>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 data-en="Exquisite Meals Crafted for You" data-he="ארוחות משובחות שנוצרות עבורך">ארוחות משובחות שנוצרות עבורך</h1>
-            <p data-en="Discover gourmet meals prepared fresh daily. Choose from diverse cuisines and enjoy restaurant-quality dining at home." data-he="גלה ארוחות גורמט המוכנות טריות מדי יום. בחר מתפריטים מגוונים ותיהנה מארוחות ברמת מסעדה בבית.">גלה ארוחות גורמט המוכנות טריות מדי יום. בחר מתפריטים מגוונים ותיהנה מארוחות ברמת מסעדה בבית.</p>
-            <a href="meals.html" class="btn btn-primary" data-en="Browse Our Meals" data-he="עיין בארוחותינו">עיין בארוחותינו</a>
-        </div>
-        <div class="hero-image">
-            <div class="image-placeholder">🍽️</div>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <h2 data-en="Why Choose Chefony?" data-he="למה לבחור ב-Chefony?">למה לבחור ב-Chefony?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">👨‍🍳</div>
-                <h3 data-en="Gourmet Quality" data-he="איכות גורמט">איכות גורמט</h3>
-                <p data-en="Every meal is crafted with premium ingredients and chef-approved recipes." data-he="כל ארוחה מוכנה עם מרכיבים פרימיום ובאישור שפים.">כל ארוחה מוכנה עם מרכיבים פרימיום ובאישור שפים.</p>
+    <section class="hero-gradient min-h-[80vh] flex items-center border-b border-stone-900">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-center md:text-right">
+                <span class="inline-block bg-amber-500/10 text-amber-400 text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-amber-500/20" data-en="The perfect chef for your event" data-he="השף המושלם לאירוע שלך">השף המושלם לאירוע שלך</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-stone-50 leading-tight">
+                    <span data-en="We find the chef," data-he="אנחנו מוצאים את השף,">אנחנו מוצאים את השף,</span> <br>
+                    <span class="text-amber-500" data-en="you enjoy the event." data-he="אתם נהנים מהאירוע.">אתם נהנים מהאירוע.</span>
+                </h1>
+                <p class="text-xl text-stone-400 max-w-xl mx-auto md:mx-0 leading-relaxed" data-en="We organize a custom culinary experience for you anywhere in the country. From premium meat chefs to interactive workshops – we take care of everything, from start to finish." data-he="מארגנים עבורכם חוויה קולינרית בכל מקום בארץ. משף בשרים מושחת ועד סדנאות אינטראקטיביות – אנחנו דואגים להכל, מא' ועד ת'.">
+                    מארגנים עבורכם חוויה קולינרית בכל מקום בארץ. משף בשרים מושחת ועד סדנאות אינטראקטיביות – אנחנו דואגים להכל, מא' ועד ת'.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="bg-amber-500 text-stone-950 text-lg font-bold px-10 py-4 rounded-2xl shadow-xl hover:bg-amber-400 transition transform hover:-translate-y-1 text-center" data-en="Let's Plan Your Event" data-he="בואו נתחיל לתכנן">בואו נתחיל לתכנן</a>
+                    <a href="https://wa.me/972526733636?text=היי%20תומר,%20אשמח%20לקבל%20פרטים%20על%20אירוע%20שף" target="_blank" class="bg-emerald-600 text-white text-lg font-bold px-10 py-4 rounded-2xl shadow-xl hover:bg-emerald-700 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <span>💬</span> <span data-en="Quick WhatsApp" data-he="וואטסאפ מהיר">וואטסאפ מהיר</span>
+                    </a>
+                </div>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3 data-en="Quick Delivery" data-he="משלוח מהיר">משלוח מהיר</h3>
-                <p data-en="Fresh meals delivered to your door within 24 hours." data-he="ארוחות טריות מועברות לדלתך תוך 24 שעות.">ארוחות טריות מועברות לדלתך תוך 24 שעות.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌱</div>
-                <h3 data-en="Healthy Options" data-he="אפשרויות בריאות">אפשרויות בריאות</h3>
-                <p data-en="Nutritious, balanced meals tailored to dietary preferences." data-he="ארוחות מזינות ומאוזנות המותאמות להעדפות תזונתיות.">ארוחות מזינות ומאוזנות המותאמות להעדפות תזונתיות.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌍</div>
-                <h3 data-en="Diverse Cuisines" data-he="מטבחים מגוונים">מטבחים מגוונים</h3>
-                <p data-en="Explore Italian, Asian, Mediterranean, French, and more." data-he="בדוק איטלקית, אסיאתית, ים תיכונית, צרפתית ועוד.">בדוק איטלקית, אסיאתית, ים תיכונית, צרפתית ועוד.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⭐</div>
-                <h3 data-en="Top Rated" data-he="דירוג גבוה">דירוג גבוה</h3>
-                <p data-en="Thousands of five-star reviews from satisfied customers." data-he="אלפי ביקורות חמישה כוכבים מלקוחות מרוצים.">אלפי ביקורות חמישה כוכבים מלקוחות מרוצים.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💳</div>
-                <h3 data-en="Easy Ordering" data-he="הזמנה קלה">הזמנה קלה</h3>
-                <p data-en="Simple checkout with flexible delivery and payment options." data-he="קופה פשוטה עם אפשרויות משלוח ותשלום גמישות.">קופה פשוטה עם אפשרויות משלוח ותשלום גמישות.</p>
+            <div class="relative">
+                <div class="absolute -inset-4 bg-amber-500/10 rounded-[3rem] blur-3xl"></div>
+                <img src="https://images.unsplash.com/photo-1555244162-803834f70033?w=800&auto=format&fit=crop&q=90" 
+                     class="relative w-full h-[500px] object-cover rounded-[2.5rem] shadow-2xl border border-stone-800" alt="שולחן שף">
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
-        <h2 data-en="How It Works" data-he="איך זה עובד">איך זה עובד</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3 data-en="Browse Meals" data-he="עיין בארוחות">עיין בארוחות</h3>
-                <p data-en="Explore our delicious selection of gourmet meals" data-he="בדוק את מבחר הארוחות המעולות שלנו">בדוק את מבחר הארוחות המעולות שלנו</p>
-            </div>
-            <div class="step-arrow" data-arrow="true">←</div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3 data-en="Choose & Customize" data-he="בחר והתאם">בחר והתאם</h3>
-                <p data-en="Select your meals and customize to your taste" data-he="בחר ארוחות והתאם לטעמך">בחר ארוחות והתאם לטעמך</p>
-            </div>
-            <div class="step-arrow" data-arrow="true">←</div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3 data-en="Place Order" data-he="בצע הזמנה">בצע הזמנה</h3>
-                <p data-en="Complete your order with secure payment" data-he="השלם את הזמנתך עם תשלום מאובטח">השלם את הזמנתך עם תשלום מאובטח</p>
-            </div>
-            <div class="step-arrow" data-arrow="true">←</div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3 data-en="Enjoy!" data-he="תיהנו!">תיהנו!</h3>
-                <p data-en="Receive your meals and enjoy gourmet dining" data-he="קבל את הארוחות שלך ותיהנה מחווית גורמט">קבל את הארוחות שלך ותיהנה מחווית גורמט</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="cta-content">
-            <h2 data-en="Ready to Experience Fine Dining at Home?" data-he="מוכנים לחוות ארוחת שף פרטית בבית?">מוכנים לחוות ארוחת שף פרטית בבית?</h2>
-            <p data-en="Join thousands of satisfied customers and enjoy gourmet meals today." data-he="הצטרף לאלפי לקוחות מרוצים ותיהנה מארוחות גורמט כבר היום.">הצטרף לאלפי לקוחות מרוצים ותיהנה מארוחות גורמט כבר היום.</p>
-            <a href="meals.html" class="btn btn-secondary" data-en="Browse Meals" data-he="עיין בארוחות">עיין בארוחות</a>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Chefony</h4>
-                <p data-en="Gourmet meals delivered to your door." data-he="ארוחות גורמט מועברות לדלת ביתך.">ארוחות גורמט מועברות לדלת ביתך.</p>
-            </div>
-            <div class="footer-section">
-                <h4 data-en="Quick Links" data-he="קישורים מהירים">קישורים מהירים</h4>
-                <ul>
-                    <li><a href="#" data-en="About Us" data-he="אודותינו">אודותינו</a></li>
-                    <li><a href="#" data-en="Contact" data-he="צור קשר">צור קשר</a></li>
-                    <li><a href="#" data-en="Privacy" data-he="פרטיות">פרטיות</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4 data-en="Follow Us" data-he="עקבו אחרינו">עקבו אחרינו</h4>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">LinkedIn</a>
+    <section id="services" class="py-24 bg-stone-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold text-stone-50 mb-4" data-en="Our Services" data-he="מה אנחנו מציעים?">מה אנחנו מציעים?</h2>
+            <p class="text-stone-400 mb-16 text-lg" data-en="Choose your style, we'll take care of the rest" data-he="בחר את החוויה המתאימה לך, אנחנו כבר נדאג לשאר">בחר את החוויה המתאימה לך, אנחנו כבר נדאג לשאר</p>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group bg-stone-950 p-6 rounded-3xl border border-stone-800/60 hover:border-amber-500/30 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md border border-stone-800" alt="שף פרטי בשרים">
+                    <h3 class="text-2xl font-bold mb-3 text-stone-100" data-en="Private Chef (Meats)" data-he="שף פרטי (בשרים)">שף פרטי (בשרים)</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed" data-en="A premium dining experience at your home. Selected cuts, professional live grilling, and personal service." data-he="חווית פרימיום אצלכם בסלון. נתחים מובחרים, צלייה מקצועית במקום והגשה אישית.">חווית פרימיום אצלכם בסלון. נתחים מובחרים, צלייה מקצועית במקום והגשה אישית.</p>
+                </div>
+                <div class="group bg-stone-950 p-6 rounded-3xl border border-stone-800/60 hover:border-amber-500/30 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md border border-stone-800" alt="שף לבופה">
+                    <h3 class="text-2xl font-bold mb-3 text-stone-100" data-en="Buffet Chef" data-he="שף לבופה">שף לבופה</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed" data-en="Casual and rich catering. Stunning food stations, finger foods, and a wide variety of flavors." data-he="אירוח קליל, עשיר ומגוון. עמדות אוכל מעוצבות, פינגר פוד וחגיגת טעמים רחבה.">אירוח קליל, עשיר ומגוון. עמדות אוכל מעוצבות, פינגר פוד וחגיגת טעמים רחבה.</p>
+                </div>
+                <div class="group bg-stone-950 p-6 rounded-3xl border border-stone-800/60 hover:border-amber-500/30 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400&q=80" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md border border-stone-800" alt="שף ליומולדת">
+                    <h3 class="text-2xl font-bold mb-3 text-stone-100" data-en="Birthday Parties" data-he="שף ליומולדת">שף ליומולדת</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed" data-en="Celebrate in style. A tailored menu fitted to your concept to make the party unforgettable." data-he="חוגגים בסטייל. תפריט מותאם אישית לקונספט שלכם שיהפוך את החגיגה לבלתי נשכחת.">חוגגים בסטייל. תפריט מותאם אישית לקונספט שלכם שיהפוך את החגיגה לבלתי נשכחת.</p>
+                </div>
+                <div class="group bg-stone-950 p-6 rounded-3xl border border-stone-800/60 hover:border-amber-500/30 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&q=80" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md border border-stone-800" alt="סדנת שף">
+                    <h3 class="text-2xl font-bold mb-3 text-stone-100" data-en="Chef Workshops" data-he="סדנת שף">סדנת שף</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed" data-en="An interactive, fun, and educational culinary session. Cook together, learn secrets, and enjoy the meal." data-he="חוויה קולינרית לימודית ומהנה במיוחד. מבשלים ביחד, לומדים סודות ונהנים מהתוצאות.">חוויה קולינרית לימודית ומהנה במיוחד. מבשלים ביחד, לומדים סודות ונהנים מהתוצאות.</p>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Chefony. <span data-en="All rights reserved." data-he="כל הזכויות שמורות.">כל הזכויות שמורות.</span></p>
+    </section>
+
+    <section id="how-it-works" class="py-24 bg-stone-950 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 space-y-3">
+                <h2 class="text-4xl font-extrabold text-stone-50" data-en="How It Works" data-he="איך זה עובד?">איך זה עובד?</h2>
+                <p class="text-stone-400 text-lg" data-en="4 simple steps to your private restaurant experience" data-he="4 שלבים פשוטים בדרך למסעדה פרטית אצלכם באירוע">4 שלבים פשוטים בדרך למסעדה פרטית אצלכם באירוע</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📱</div> <h3 class="text-xl font-bold text-stone-100 mb-2" data-en="Get in Touch" data-he="יוצרים קשר">יוצרים קשר</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed" data-en="Leave your details on the form or send a quick WhatsApp message to start." data-he="משאירים פרטים קצרים בטופס או שולחים הודעת וואטסאפ מהירה.">משאירים פרטים קצרים בטופס או שולחים הודעת וואטסאפ מהירה.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">👨‍🍳👩‍🍳</div> <h3 class="text-xl font-bold text-stone-100 mb-2" data-en="Chef Matching" data-he="התאמת השף">התאמת השף</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed" data-en="We match the perfect chef based on your location, budget, and event style." data-he="לפי המיקום, התקציב ואופי האירוע אנחנו מוצאים ומתאימים לכם את השף המדויק.">לפי המיקום, התקציב ואופי האירוע אנחנו מוצאים ומתאימים לכם את השף המדויק.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">💰</div> <h3 class="text-xl font-bold text-stone-100 mb-2" data-en="Secure & Wait" data-he="סוגרים מקדמה">סוגרים מקדמה</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed" data-en="Secure your date with a small deposit, sit back and relax." data-he="סוגרים מקדמה קטנה כדי לשריין את התאריך באופן סופי, ומחכים בראש שקט.">סוגרים מקדמה קטנה כדי לשריין את התאריך באופן סופי, ומחכים בראש שקט.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">🍳🍽️</div> <h3 class="text-xl font-bold text-stone-100 mb-2" data-en="Enjoy & Relax" data-he="ביום האירוע">ביום האירוע</h3>
+                    <p class="text-stone-400 text-sm leading-relaxed" data-en="The chef arrives with all equipment, cooks, serves, and leaves the kitchen spotless." data-he="השף מגיע עם כל הציוד הנדרש, מכין את האוכל, מגיש ומשאיר מטבח נקי אחריו.">השף מגיע עם כל הציוד הנדרש, מכין את האוכל, מגיש ומשאיר מטבח נקי אחריו.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-stone-900 border-t border-stone-850">
+        <div class="max-w-xl mx-auto px-6">
+            <div class="bg-stone-950 p-10 rounded-[2.5rem] shadow-2xl border border-stone-800/60">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-extrabold mb-2 text-stone-50" data-en="Get in Touch" data-he="דברו איתנו">דברו איתנו</h2>
+                    <p class="text-amber-500/80 italic text-sm" data-en="Leave your details and we'll get back to you with a delicious offer" data-he="השאירו פרטים ונחזור אליכם עם הצעה טעימה">השאירו פרטים ונחזור אליכם עם הצעה טעימה</p>
+                </div>
+                
+                <form id="leadForm" class="space-y-6" novalidate>
+                    <div class="grid gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-stone-300 mb-2" data-en="Full Name" data-he="שם מלא">שם מלא</label>
+                            <input type="text" id="name" placeholder="איך קוראים לכם?" data-placeholder-en="Your name" data-placeholder-he="איך קוראים לכם?"
+                                   class="w-full bg-stone-900 border border-stone-800 p-4 rounded-2xl focus:border-amber-500 focus:outline-none transition-all shadow-inner text-stone-100">
+                            <p id="nameError" class="text-red-500 text-xs mt-1 hidden" data-en="Please enter a valid full name (at least 2 letters)" data-he="אנא הזן שם מלא תקין (לפחות 2 אותיות)"></p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-stone-300 mb-2" data-en="Phone Number" data-he="מספר טלפון">מספר טלפון</label>
+                            <input type="tel" id="phone" placeholder="05x-xxxxxxx" data-placeholder-en="05x-xxxxxxx" data-placeholder-he="05x-xxxxxxx"
+                                   class="w-full bg-stone-900 border border-stone-800 p-4 rounded-2xl focus:border-amber-500 focus:outline-none transition-all shadow-inner text-right text-stone-100" dir="ltr">
+                            <p id="phoneError" class="text-red-500 text-xs mt-1 hidden" data-en="Please enter a valid Israeli phone number (e.g. 0526733636)" data-he="אנא הזן מספר טלפון ישראלי תקין (למשל 0526733636)"></p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-stone-300 mb-2" data-en="Event Type" data-he="סוג האירוע">סוג האירוע</label>
+                            <select id="experience" class="w-full bg-stone-900 border border-stone-800 p-4 rounded-2xl focus:border-amber-500 focus:outline-none transition-all bg-stone-900 text-stone-100 shadow-inner font-semibold">
+                                <option data-en="Private Chef (Meats)" data-he="שף פרטי (כולל בשרים)">שף פרטי (כולל בשרים)</option>
+                                <option data-en="Buffet Chef" data-he="שף לבופה">שף לבופה</option>
+                                <option data-en="Birthday Party" data-he="שף ליומולדת">שף ליומולדת</option>
+                                <option data-en="Chef Workshop" data-he="סדנת שף">סדנת שף</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-stone-300 mb-2" data-en="Additional Requests / Notes" data-he="בקשות מיוחדות / הערות">בקשות מיוחדות / הערות</label>
+                            <textarea id="notes" rows="3" placeholder="יש לכם משהו שחשוב לנו לדעת?" data-placeholder-en="Anything else we should know?" data-placeholder-he="יש לכם משהו שחשוב לנו לדעת?"
+                                      class="w-full bg-stone-900 border border-stone-800 p-4 rounded-2xl focus:border-amber-500 focus:outline-none transition-all shadow-inner text-stone-100 resize-none"></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn" 
+                            class="w-full bg-amber-500 hover:bg-amber-600 text-stone-950 text-xl font-bold py-5 rounded-2xl transition duration-300 shadow-lg shadow-amber-500/10 cursor-pointer"
+                            data-en="Send Request" data-he="שלח בקשה לשף">
+                        שלח בקשה לשף
+                    </button>
+
+                    <p id="successMsg" class="hidden text-green-400 font-bold text-center bg-green-500/10 border border-green-500/20 p-3 rounded-xl" data-en="✅ Details sent! We will contact you shortly." data-he="✅ הפרטים נשלחו! תומר יחזור אליכם בהקדם.">✅ הפרטים נשלחו! תומר יחזור אליכם בהקדם.</p>
+                    <p id="errorMsg" class="hidden text-red-400 font-bold text-center bg-red-500/10 border border-red-500/20 p-3 rounded-xl" data-en="❌ Error sending. This might be a CORS blocking issue on localhost." data-he="❌ תקלת שליחה. (אם אתה מריץ את הקובץ מקומית, הדפדפן חוסם שליחת API ישירה עקב CORS).">❌ תקלת שליחה. (אם אתה מריץ את הקובץ מקומית, הדפדפן חוסם שליחת API ישירה עקב CORS).</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-stone-950 border-t border-stone-900 py-16 text-center px-6 text-stone-400">
+        <div class="max-w-7xl mx-auto space-y-6">
+            <span class="text-3xl font-black tracking-tighter text-amber-500 block">Chefony</span>
+            <p class="text-base max-w-md mx-auto" data-en="The easiest and most delicious way to organize a premium culinary event tailored entirely to you." data-he="הדרך הקלה והטעימה ביותר לארגן אירוע קולינרי מנצח בהתאמה מלאה אליכם.">הדרך הקלה והטעימה ביותר לארגן אירוע קולינרי מנצח בהתאמה מלאה אליכם.</p>
+            <div class="flex justify-center gap-8 text-lg">
+                <a href="https://instagram.com" target="_blank" class="hover:text-amber-500 transition-colors">Instagram</a>
+                <a href="https://facebook.com" target="_blank" class="hover:text-amber-500 transition-colors">Facebook</a>
+            </div>
+            <div class="border-t border-stone-900 mt-10 pt-10 text-stone-600 text-sm" data-en="&copy; 2026 Chefony. All rights reserved to Tomer." data-he="&copy; 2026 Chefony. כל הזכויות שמורות לתומר.">
+                &copy; 2026 Chefony. כל הזכויות שמורות לתומר.
+            </div>
         </div>
     </footer>
 
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 data-en="Get in Touch" data-he="צור קשר">צור קשר</h2>
-            <form id="contactForm" onsubmit="submitForm(event)">
-                <div class="form-group">
-                    <label for="name" data-en="Name" data-he="שם">שם</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone" data-en="Phone (9 digits)" data-he="טלפון (9 ספרות)">טלפון (9 ספרות)</label>
-                    <input type="tel" id="phone" name="phone" pattern="\d{9}" placeholder="123456789" required>
-                </div>
-                <div class="form-group">
-                    <label for="email" data-en="Email (Optional)" data-he="דוא״ל (אופציונלי)">דוא״ל (אופציונלי)</label>
-                    <input type="email" id="email" name="email">
-                </div>
-                <div class="form-group">
-                    <label for="message" data-en="Message" data-he="הודעה">הודעה</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" data-en="Send" data-he="שלח">שלח</button>
-            </form>
-        </div>
+    <div class="md:hidden fixed bottom-6 left-6 right-6 z-40">
+        <a href="https://wa.me/972526733636?text=היי%20תומר,%20אשמח%20לקבל%2520פרטים%2520על%2520אירוע%2520שף" target="_blank" 
+           class="flex items-center justify-center gap-3 bg-emerald-600 text-white font-bold py-4 rounded-2xl shadow-2xl active:scale-95 transition-all text-base">
+            <span class="text-xl">💬</span> <span data-en="Chat with us on WhatsApp" data-he="דברו איתנו בוואטסאפ">דברו איתנו בוואטסאפ</span>
+        </a>
     </div>
 
     <script>
         function toggleLanguage() {
             const htmlTag = document.documentElement;
-            // בדיקת השפה הנוכחית ומעבר לשנייה
             const currentLang = htmlTag.getAttribute('lang') === 'he' ? 'en' : 'he';
             
-            // עדכון מאפייני השפה והכיווניות על ה-HTML הראשי
             htmlTag.setAttribute('lang', currentLang);
             htmlTag.setAttribute('dir', currentLang === 'he' ? 'rtl' : 'ltr');
-
-            // מעבר על כל האלמנטים שיש להם תרגום והחלפת הטקסט הפנימי שלהם
-            const translatableElements = document.querySelectorAll('[data-en][data-he]');
-            translatableElements.forEach(el => {
+            
+            document.querySelectorAll('[data-en][data-he]').forEach(el => {
                 el.textContent = el.getAttribute(`data-${currentLang}`);
             });
-
-            // היפוך כיוון חצי הזרימה (איך זה עובד) בהתאם לכיווניות החדשה
-            const arrows = document.querySelectorAll('[data-arrow]');
-            arrows.forEach(arrow => {
-                arrow.textContent = currentLang === 'he' ? '←' : '→';
+            
+            document.querySelectorAll('[data-placeholder-en]').forEach(input => {
+                input.placeholder = input.getAttribute(`data-placeholder-${currentLang}`);
             });
         }
+
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('successMsg');
+            const errorMsg = document.getElementById('errorMsg');
+            
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            const nameError = document.getElementById('nameError');
+            const phoneError = document.getElementById('phoneError');
+            
+            const isHe = document.documentElement.getAttribute('lang') === 'he';
+            
+            // איפוס שגיאות והודעות קודמות
+            nameError.classList.add('hidden');
+            phoneError.classList.add('hidden');
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+            
+            let isValid = true;
+
+            // 1. אימות השם (לפחות 2 אותיות ללא רווחים קיצוניים)
+            if (nameInput.value.trim().length < 2) {
+                nameError.textContent = nameError.getAttribute(`data-${isHe ? 'he' : 'en'}`);
+                nameError.classList.remove('hidden');
+                isValid = false;
+            }
+
+            // 2. אימות מספר טלפון ישראלי (05XXXXXXXX)
+            const phoneRegex = /^05\d{8}$/;
+            if (!phoneRegex.test(phoneInput.value.replace(/[- ]/g, ''))) {
+                phoneError.textContent = phoneError.getAttribute(`data-${isHe ? 'he' : 'en'}`);
+                phoneError.classList.remove('hidden');
+                isValid = false;
+            }
+
+            if (!isValid) return; // עצירת השליחה אם משהו לא תקין
+
+            // תחילת תהליך השליחה
+            submitBtn.disabled = true;
+            submitBtn.innerText = isHe ? 'שולח...' : 'Sending...';
+
+            const name = nameInput.value;
+            const phone = phoneInput.value;
+            const experience = document.getElementById('experience').value;
+            const notes = document.getElementById('notes').value;
+
+            try {
+                const resendToken = 're_fSJWWiZ7_N52iwLpDWjrXwYCDpTghZKxU'; 
+
+                const response = await fetch('https://api.resend.com/emails', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${resendToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        from: 'אתר שפוני <Tomer@chefony.site>',
+                        to: 'Tomer@chefony.site',
+                        subject: `בקשה חדשה לאירוע: ${name}`,
+                        html: `
+                            <div dir="rtl" style="font-family: sans-serif; padding: 20px; color: #333; border: 1px solid #eee;">
+                                <h2 style="color: #d97706;">התקבלה הזמנה חדשה מ-Chefony!</h2>
+                                <p style="font-size: 16px;"><strong>שם הלקוח:</strong> ${name}</p>
+                                <p style="font-size: 16px;"><strong>טלפון:</strong> ${phone}</p>
+                                <p style="font-size: 16px;"><strong>סוג האירוע המבוקש:</strong> ${experience}</p>
+                                <p style="font-size: 16px;"><strong>בקשות מיוחדות / הערות:</strong> ${notes || 'אין הערות מיוחדות'}</p>
+                            </div>
+                        `
+                    })
+                });
+
+                if (response.ok) {
+                    successMsg.classList.remove('hidden');
+                    document.getElementById('leadForm').reset();
+                } else {
+                    errorMsg.classList.remove('hidden');
+                }
+            } catch (error) {
+                errorMsg.classList.remove('hidden');
+                console.error("CORS Error / API Error:", error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = isHe ? 'שלח בקשה לשף' : 'Send Request';
+            }
+        });
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
