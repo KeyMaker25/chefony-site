@@ -3,63 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chefony | האתר בבנייה</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            max-width: 500px;
-            width: 100%;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-        p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        .loader {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top: 4px solid #fff;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 30px auto 0 auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <title>Chefony - Delicious Meals Delivered</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Chefony</h1>
+                <p data-en="Gourmet Meals at Your Door" data-he="ארוחות גורמט אצלך בדלת">ארוחות גורמט אצלך בדלת</p>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-en="Home" data-he="בית">בית</a>
+                <a href="meals.html" class="nav-link" data-en="Browse Meals" data-he="עיין בארוחות">עיין בארוחות</a>
+                <a href="#how-it-works" class="nav-link" data-en="How It Works" data-he="איך זה עובד">איך זה עובד</a>
+                <button class="lang-toggle" onclick="toggleLanguage()">EN / עבר</button>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container">
-        <h1>Chefony</h1>
-        <p>האתר שלנו נמצא כעת בתהליך בנייה ושדרוג.</p>
-        <p>אנחנו מכינים עבורכם משהו חדש ומיוחד, שווה לחכות!</p>
-        <div class="loader"></div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 data-en="Exquisite Meals Crafted for You" data-he="ארוחות משובחות שנוצרות עבורך">ארוחות משובחות שנוצרות עבורך</h1>
+            <p data-en="Discover gourmet meals prepared fresh daily. Choose from diverse cuisines and enjoy restaurant-quality dining at home." data-he="גלה ארוחות גורמט המוכנות טריות מדי יום. בחר מתפריטים מגוונים ותיהנה מארוחות ברמת מסעדה בבית.">גלה ארוחות גורמט המוכנות טריות מדי יום. בחר מתפריטים מגוונים ותיהנה מארוחות ברמת מסעדה בבית.</p>
+            <a href="meals.html" class="btn btn-primary" data-en="Browse Our Meals" data-he="עיין בארוחותינו">עיין בארוחותינו</a>
+        </div>
+        <div class="hero-image">
+            <div class="image-placeholder">🍽️</div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2 data-en="Why Choose Chefony?" data-he="למה לבחור ב-Chefony?">למה לבחור ב-Chefony?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🍳</div>
+                <h3 data-en="Gourmet Quality" data-he="איכות גורמט">איכות גורמט</h3>
+                <p data-en="Every meal is crafted with premium ingredients and chef-approved recipes." data-he="כל ארוחה מוכנה עם מרכיבים פרימיום ובאישור שפים.">כל ארוחה מוכנה עם מרכיבים פרימיום ובאישור שפים.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 data-en="Quick Delivery" data-he="משלוח מהיר">משלוח מהיר</h3>
+                <p data-en="Fresh meals delivered to your door within 24 hours." data-he="ארוחות טריות מועברות לדלתך תוך 24 שעות.">ארוחות טריות מועברות לדלתך תוך 24 שעות.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3 data-en="Healthy Options" data-he="אפשרויות בריאות">אפשרויות בריאות</h3>
+                <p data-en="Nutritious, balanced meals tailored to dietary preferences." data-he="ארוחות מזינות ומאוזנות המותאמות להעדפות תזונתיות.">ארוחות מזינות ומאוזנות המותאמות להעדפות תזונתיות.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3 data-en="Diverse Cuisines" data-he="מטבחים מגוונים">מטבחים מגוונים</h3>
+                <p data-en="Explore Italian, Asian, Mediterranean, French, and more." data-he="בדוק איטלקית, אסיאתית, ים תיכונית, צרפתית ועוד.">בדוק איטלקית, אסיאתית, ים תיכונית, צרפתית ועוד.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3 data-en="Top Rated" data-he="דירוג גבוה">דירוג גבוה</h3>
+                <p data-en="Thousands of five-star reviews from satisfied customers." data-he="אלפי ביקורות חמישה כוכבים מלקוחות מרוצים.">אלפי ביקורות חמישה כוכבים מלקוחות מרוצים.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3 data-en="Easy Ordering" data-he="הזמנה קלה">הזמנה קלה</h3>
+                <p data-en="Simple checkout with flexible delivery and payment options." data-he="קופה פשוטה עם אפשרויות משלוח ותשלום גמישות.">קופה פשוטה עם אפשרויות משלוח ותשלום גמישות.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2 data-en="How It Works" data-he="איך זה עובד">איך זה עובד</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3 data-en="Browse Meals" data-he="עיין בארוחות">עיין בארוחות</h3>
+                <p data-en="Explore our delicious selection of gourmet meals" data-he="בדוק את מבחר הארוחות המעולות שלנו">בדוק את מבחר הארוחות המעולות שלנו</p>
+            </div>
+            <div class="step-arrow" data-arrow="true">←</div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3 data-en="Choose & Customize" data-he="בחר והתאם">בחר והתאם</h3>
+                <p data-en="Select your meals and customize to your taste" data-he="בחר ארוחות והתאם לטעמך">בחר ארוחות והתאם לטעמך</p>
+            </div>
+            <div class="step-arrow" data-arrow="true">←</div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3 data-en="Place Order" data-he="בצע הזמנה">בצע הזמנה</h3>
+                <p data-en="Complete your order with secure payment" data-he="השלם את הזמנתך עם תשלום מאובטח">השלם את הזמנתך עם תשלום מאובטח</p>
+            </div>
+            <div class="step-arrow" data-arrow="true">←</div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3 data-en="Enjoy!" data-he="תיהנו!">תיהנו!</h3>
+                <p data-en="Receive your meals and enjoy gourmet dining" data-he="קבל את הארוחות שלך ותיהנה מחווית גורמט">קבל את הארוחות שלך ותיהנה מחווית גורמט</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2 data-en="Ready to Experience Fine Dining at Home?" data-he="מוכנים לחוות ארוחת שף פרטית בבית?">מוכנים לחוות ארוחת שף פרטית בבית?</h2>
+            <p data-en="Join thousands of satisfied customers and enjoy gourmet meals today." data-he="הצטרף לאלפי לקוחות מרוצים ותיהנה מארוחות גורמט כבר היום.">הצטרף לאלפי לקוחות מרוצים ותיהנה מארוחות גורמט כבר היום.</p>
+            <a href="meals.html" class="btn btn-secondary" data-en="Browse Meals" data-he="עיין בארוחות">עיין בארוחות</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Chefony</h4>
+                <p data-en="Gourmet meals delivered to your door." data-he="ארוחות גורמט מועברות לדלת ביתך.">ארוחות גורמט מועברות לדלת ביתך.</p>
+            </div>
+            <div class="footer-section">
+                <h4 data-en="Quick Links" data-he="קישורים מהירים">קישורים מהירים</h4>
+                <ul>
+                    <li><a href="#" data-en="About Us" data-he="אודותינו">אודותינו</a></li>
+                    <li><a href="#" data-en="Contact" data-he="צור קשר">צור קשר</a></li>
+                    <li><a href="#" data-en="Privacy" data-he="פרטיות">פרטיות</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 data-en="Follow Us" data-he="עקבו אחרינו">עקבו אחרינו</h4>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Chefony. <span data-en="All rights reserved." data-he="כל הזכויות שמורות.">כל הזכויות שמורות.</span></p>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 data-en="Get in Touch" data-he="צור קשר">צור קשר</h2>
+            <form id="contactForm" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="name" data-en="Name" data-he="שם">שם</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-en="Phone (9 digits)" data-he="טלפון (9 ספרות)">טלפון (9 ספרות)</label>
+                    <input type="tel" id="phone" name="phone" pattern="\d{9}" placeholder="123456789" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-en="Email (Optional)" data-he="דוא״ל (אופציונלי)">דוא״ל (אופציונלי)</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="message" data-en="Message" data-he="הודעה">הודעה</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" data-en="Send" data-he="שלח">שלח</button>
+            </form>
+        </div>
     </div>
 
+    <script>
+        function toggleLanguage() {
+            const htmlTag = document.documentElement;
+            // בדיקת השפה הנוכחית ומעבר לשנייה
+            const currentLang = htmlTag.getAttribute('lang') === 'he' ? 'en' : 'he';
+            
+            // עדכון מאפייני השפה והכיווניות על ה-HTML הראשי
+            htmlTag.setAttribute('lang', currentLang);
+            htmlTag.setAttribute('dir', currentLang === 'he' ? 'rtl' : 'ltr');
+
+            // מעבר על כל האלמנטים שיש להם תרגום והחלפת הטקסט הפנימי שלהם
+            const translatableElements = document.querySelectorAll('[data-en][data-he]');
+            translatableElements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${currentLang}`);
+            });
+
+            // היפוך כיוון חצי הזרימה (איך זה עובד) בהתאם לכיווניות החדשה
+            const arrows = document.querySelectorAll('[data-arrow]');
+            arrows.forEach(arrow => {
+                arrow.textContent = currentLang === 'he' ? '←' : '→';
+            });
+        }
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
